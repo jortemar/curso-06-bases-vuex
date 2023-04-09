@@ -1,15 +1,16 @@
+import { defineAsyncComponent } from 'vue';
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <CounterComp />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { defineAsyncComponent } from 'vue' 
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CounterComp: defineAsyncComponent( () => import('@/components/CounterComp.vue'))
   }
 }
 </script>
